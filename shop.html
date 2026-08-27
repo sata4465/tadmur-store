@@ -1,0 +1,407 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Shop all top-ups — Palmyra</title><meta name="description" content="Filter and sort every game and app top-up in the vault."/>
+<link rel="icon" href="/img/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/></head><body>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="/"><b>Palmyra</b><span>تدمر</span></a>
+  <nav><a href="/">Home</a><a href="/shop.html">Shop</a><a href="/collections.html">Collections</a><a href="/gifting.html">Gifting</a></nav>
+  <button class="btn cartbtn" id="cartToggle">Cart <span class="count" data-count>0</span></button>
+</div></header><main class="wrap"><h1>Everything in the vault</h1>
+  <p class="small">Filter client-side — no server needed on shared hosting.</p>
+  <div class="filters">
+    <input id="q" placeholder="Search diamonds, wallets, apps…" class="inp"/>
+    <select id="cat" class="inp"><option value="">All shelves</option><option value="Mobile Top-Ups">Mobile Top-Ups</option><option value="PC &amp; Console">PC &amp; Console</option><option value="Streaming &amp; Music">Streaming &amp; Music</option><option value="Apps &amp; AI">Apps &amp; AI</option><option value="Creator &amp; Social">Creator &amp; Social</option><option value="Gift Cards &amp; Wallets">Gift Cards &amp; Wallets</option></select>
+    <select id="sort" class="inp">
+      <option value="popular">Most popular</option><option value="price-asc">Price ↑</option>
+      <option value="price-desc">Price ↓</option><option value="rating">Top rated</option>
+    </select>
+    <select id="max" class="inp"><option value="">Any price</option><option value="200">≤ $2</option><option value="500">≤ $5</option><option value="1000">≤ $10</option><option value="2500">≤ $25</option><option value="5000">≤ $50</option><option value="10000">≤ $100</option><option value="25000">≤ $250</option></select>
+  </div>
+  <div class="grid cols4" id="grid"><article class="card">
+  <a class="thumb" href="/product/google-play-gift-card.html"><img src="/img/giftcards.png" alt="Google Play Gift Card" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Most gifted</span></a>
+  <div class="body">
+    <p class="meta">Google · US</p>
+    <h3><a href="/product/google-play-gift-card.html">Google Play Gift Card</a></h3>
+    <p class="tag">Android apps, games, books and movies</p>
+    <div class="row"><span class="price">$10.29 <s>$10.99</s><i>−6%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 2740 reviews</span>
+      <button class="btn small add" data-slug="google-play-gift-card" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/steam-wallet-usd.html"><img src="/img/wallet-steam.png" alt="Steam Wallet Code" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Best seller</span></a>
+  <div class="body">
+    <p class="meta">Valve · USD / EU / UK</p>
+    <h3><a href="/product/steam-wallet-usd.html">Steam Wallet Code</a></h3>
+    <p class="tag">The only currency with a sale every season</p>
+    <div class="row"><span class="price">$5.29 <s>$5.99</s><i>−12%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 5.0 · 2310 reviews</span>
+      <button class="btn small add" data-slug="steam-wallet-usd" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/apple-app-store-gift-card.html"><img src="/img/giftcards.png" alt="App Store &amp; iTunes Gift Card" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Most gifted</span></a>
+  <div class="body">
+    <p class="meta">Apple · US</p>
+    <h3><a href="/product/apple-app-store-gift-card.html">App Store &amp; iTunes Gift Card</a></h3>
+    <p class="tag">Apps, games, iCloud and Apple Music</p>
+    <div class="row"><span class="price">$15.39 <s>$16.49</s><i>−7%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 1962 reviews</span>
+      <button class="btn small add" data-slug="apple-app-store-gift-card" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/mobile-legends-diamonds.html"><img src="/img/diamonds-cyan.png" alt="Mobile Legends: Bang Bang Diamonds" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Best seller</span></a>
+  <div class="body">
+    <p class="meta">Moonton · Global</p>
+    <h3><a href="/product/mobile-legends-diamonds.html">Mobile Legends: Bang Bang Diamonds</a></h3>
+    <p class="tag">Every diamond pack for MLBB, delivered to your player ID — no login, no password, no risk.</p>
+    <div class="row"><span class="price">$0.99 <s>$1.29</s><i>−23%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 2148 reviews</span>
+      <button class="btn small add" data-slug="mobile-legends-diamonds" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/spotify-premium.html"><img src="/img/streaming-apps.png" alt="Spotify Premium" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Renew &amp; save</span></a>
+  <div class="body">
+    <p class="meta">Spotify · Global</p>
+    <h3><a href="/product/spotify-premium.html">Spotify Premium</a></h3>
+    <p class="tag">Ad-free, offline, and the family plan</p>
+    <div class="row"><span class="price">$11.99 <s>$12.99</s><i>−8%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 1830 reviews</span>
+      <button class="btn small add" data-slug="spotify-premium" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/free-fire-diamonds.html"><img src="/img/diamonds-crimson.png" alt="Free Fire Diamonds" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Flash price</span></a>
+  <div class="body">
+    <p class="meta">Garena · Global</p>
+    <h3><a href="/product/free-fire-diamonds.html">Free Fire Diamonds</a></h3>
+    <p class="tag">The cheapest Booyah money on the internet</p>
+    <div class="row"><span class="price">$0.99 <s>$1.19</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 1804 reviews</span>
+      <button class="btn small add" data-slug="free-fire-diamonds" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/discord-nitro.html"><img src="/img/streaming-apps.png" alt="Discord Nitro" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Community pick</span></a>
+  <div class="body">
+    <p class="meta">Discord · Global</p>
+    <h3><a href="/product/discord-nitro.html">Discord Nitro</a></h3>
+    <p class="tag">Boosts, HD video and 100MB uploads</p>
+    <div class="row"><span class="price">$2.99 <s>$3.99</s><i>−25%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 1608 reviews</span>
+      <button class="btn small add" data-slug="discord-nitro" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/epic-games-v-bucks.html"><img src="/img/coins-blocky.png" alt="Fortnite V-Bucks" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Epic Games · Global</p>
+    <h3><a href="/product/epic-games-v-bucks.html">Fortnite V-Bucks</a></h3>
+    <p class="tag">Battle pass plus two emotes, sorted</p>
+    <div class="row"><span class="price">$7.99 <s>$9.99</s><i>−20%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 1420 reviews</span>
+      <button class="btn small add" data-slug="epic-games-v-bucks" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/roblox-robux.html"><img src="/img/coins-blocky.png" alt="Roblox Robux" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Family favourite</span></a>
+  <div class="body">
+    <p class="meta">Roblox · Global</p>
+    <h3><a href="/product/roblox-robux.html">Roblox Robux</a></h3>
+    <p class="tag">Robux for the avatar, the gear and the gamepass</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 1587 reviews</span>
+      <button class="btn small add" data-slug="roblox-robux" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/pubg-mobile-uc.html"><img src="/img/uc-tactical.png" alt="PUBG Mobile UC" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Level Infinite · Global</p>
+    <h3><a href="/product/pubg-mobile-uc.html">PUBG Mobile UC</a></h3>
+    <p class="tag">Unknown Cash, credited before the next drop</p>
+    <div class="row"><span class="price">$0.99 <s>$1.29</s><i>−23%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 1246 reviews</span>
+      <button class="btn small add" data-slug="pubg-mobile-uc" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/netflix-premium.html"><img src="/img/streaming-apps.png" alt="Netflix Gift Card" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Netflix · US / EU / MEA</p>
+    <h3><a href="/product/netflix-premium.html">Netflix Gift Card</a></h3>
+    <p class="tag">4K, four screens, no ad break</p>
+    <div class="row"><span class="price">$25.99 <s>$27.99</s><i>−7%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 1225 reviews</span>
+      <button class="btn small add" data-slug="netflix-premium" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/razer-gold-pin.html"><img src="/img/wallet-steam.png" alt="Razer Gold PIN" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Razer Gold · Global</p>
+    <h3><a href="/product/razer-gold-pin.html">Razer Gold PIN</a></h3>
+    <p class="tag">One wallet, 5,000+ games</p>
+    <div class="row"><span class="price">$10.39 <s>$11.49</s><i>−10%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 1030 reviews</span>
+      <button class="btn small add" data-slug="razer-gold-pin" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/valorant-points.html"><img src="/img/points-tactical-shards.png" alt="Valorant Points" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Trending</span></a>
+  <div class="body">
+    <p class="meta">Riot Games · Region matched</p>
+    <h3><a href="/product/valorant-points.html">Valorant Points</a></h3>
+    <p class="tag">Agent, bundle, and then some</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 1102 reviews</span>
+      <button class="btn small add" data-slug="valorant-points" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/playstation-network-card.html"><img src="/img/wallet-steam.png" alt="PlayStation Network Card" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Gift ready</span></a>
+  <div class="body">
+    <p class="meta">PlayStation Network · US / UK / DE / TR</p>
+    <h3><a href="/product/playstation-network-card.html">PlayStation Network Card</a></h3>
+    <p class="tag">Wallet credit for PS Plus, games and DLC</p>
+    <div class="row"><span class="price">$25.49 <s>$27.99</s><i>−9%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 906 reviews</span>
+      <button class="btn small add" data-slug="playstation-network-card" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/apple-icloud-plus.html"><img src="/img/giftcards.png" alt="iCloud+ Storage" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Apple · US / EU / MENA</p>
+    <h3><a href="/product/apple-icloud-plus.html">iCloud+ Storage</a></h3>
+    <p class="tag">Because 5GB is a cruel joke</p>
+    <div class="row"><span class="price">$0.99 <s>$1.29</s><i>−23%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 812 reviews</span>
+      <button class="btn small add" data-slug="apple-icloud-plus" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/genshin-impact-crystallization.html"><img src="/img/crystals-gold.png" alt="Genshin Impact Genesis Crystals" loading="lazy" class="" onerror="this.remove()" /><span class="badge">Editor's pick</span></a>
+  <div class="body">
+    <p class="meta">HoYoverse · Global</p>
+    <h3><a href="/product/genshin-impact-crystallization.html">Genshin Impact Genesis Crystals</a></h3>
+    <p class="tag">Fund the Banner before pity bites</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 934 reviews</span>
+      <button class="btn small add" data-slug="genshin-impact-crystallization" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/youtube-premium.html"><img src="/img/streaming-apps.png" alt="YouTube Premium" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Google · US / EU / MENA</p>
+    <h3><a href="/product/youtube-premium.html">YouTube Premium</a></h3>
+    <p class="tag">Ad-free YouTube and Music, one code</p>
+    <div class="row"><span class="price">$13.99 <s>$15.99</s><i>−13%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 712 reviews</span>
+      <button class="btn small add" data-slug="youtube-premium" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/league-of-legends-rp.html"><img src="/img/points-tactical-shards.png" alt="League of Legends RP" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Riot Games · Region matched</p>
+    <h3><a href="/product/league-of-legends-rp.html">League of Legends RP</a></h3>
+    <p class="tag">Prestige edition, paid in one go</p>
+    <div class="row"><span class="price">$3.99 <s>$4.99</s><i>−20%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 742 reviews</span>
+      <button class="btn small add" data-slug="league-of-legends-rp" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/xbox-game-pass-ultimate.html"><img src="/img/streaming-apps.png" alt="Xbox Game Pass Ultimate" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Xbox / Microsoft · Global</p>
+    <h3><a href="/product/xbox-game-pass-ultimate.html">Xbox Game Pass Ultimate</a></h3>
+    <p class="tag">450+ games, one flat code</p>
+    <div class="row"><span class="price">$16.99 <s>$19.99</s><i>−15%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.9 · 664 reviews</span>
+      <button class="btn small add" data-slug="xbox-game-pass-ultimate" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/tiktok-coins.html"><img src="/img/coins-blocky.png" alt="TikTok Coins" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">TikTok · Global</p>
+    <h3><a href="/product/tiktok-coins.html">TikTok Coins</a></h3>
+    <p class="tag">Send the gift, light up the live</p>
+    <div class="row"><span class="price">$1.30 <s>$1.59</s><i>−18%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.6 · 502 reviews</span>
+      <button class="btn small add" data-slug="tiktok-coins" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/cod-mobile-cp.html"><img src="/img/points-tactical-shards.png" alt="Call of Duty Mobile CP" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Activision · Global</p>
+    <h3><a href="/product/cod-mobile-cp.html">Call of Duty Mobile CP</a></h3>
+    <p class="tag">CP for battle passes and operator bundles</p>
+    <div class="row"><span class="price">$0.99 <s>$1.29</s><i>−23%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 612 reviews</span>
+      <button class="btn small add" data-slug="cod-mobile-cp" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/chatgpt-plus.html"><img src="/img/streaming-apps.png" alt="ChatGPT Plus" loading="lazy" class="" onerror="this.remove()" /><span class="badge">New</span></a>
+  <div class="body">
+    <p class="meta">OpenAI · Global</p>
+    <h3><a href="/product/chatgpt-plus.html">ChatGPT Plus</a></h3>
+    <p class="tag">GPT-class models, priority at 3am</p>
+    <div class="row"><span class="price">$20 <s>$21.99</s><i>−9%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 588 reviews</span>
+      <button class="btn small add" data-slug="chatgpt-plus" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/clash-of-clans-gems.html"><img src="/img/diamonds-cyan.png" alt="Clash of Clans Gems" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Supercell · Global</p>
+    <h3><a href="/product/clash-of-clans-gems.html">Clash of Clans Gems</a></h3>
+    <p class="tag">Skip the builder queue legally</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 512 reviews</span>
+      <button class="btn small add" data-slug="clash-of-clans-gems" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/honkai-star-rail-monet.html"><img src="/img/crystals-gold.png" alt="Honkai: Star Rail Oneiric Shards" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">HoYoverse · Global</p>
+    <h3><a href="/product/honkai-star-rail-monet.html">Honkai: Star Rail Oneiric Shards</a></h3>
+    <p class="tag">Oneiric Shards for the next 50/50</p>
+    <div class="row"><span class="price">$0.99 <s>$1.29</s><i>−23%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.8 · 421 reviews</span>
+      <button class="btn small add" data-slug="honkai-star-rail-monet" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/disney-plus-hulu.html"><img src="/img/streaming-apps.png" alt="Disney+ / Hulu Bundle" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Disney+ · US</p>
+    <h3><a href="/product/disney-plus-hulu.html">Disney+ / Hulu Bundle</a></h3>
+    <p class="tag">The whole vault, one balance</p>
+    <div class="row"><span class="price">$25.99 <s>$27.99</s><i>−7%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.6 · 414 reviews</span>
+      <button class="btn small add" data-slug="disney-plus-hulu" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/telegram-premium.html"><img src="/img/giftcards.png" alt="Telegram Premium" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Telegram · Global</p>
+    <h3><a href="/product/telegram-premium.html">Telegram Premium</a></h3>
+    <p class="tag">Faster downloads and 4GB files</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 414 reviews</span>
+      <button class="btn small add" data-slug="telegram-premium" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/ea-fc-points.html"><img src="/img/uc-tactical.png" alt="EA SPORTS FC Points" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">EA · Global</p>
+    <h3><a href="/product/ea-fc-points.html">EA SPORTS FC Points</a></h3>
+    <p class="tag">FUT, without grinding the squad builder</p>
+    <div class="row"><span class="price">$9.99 <s>$11.50</s><i>−13%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.5 · 414 reviews</span>
+      <button class="btn small add" data-slug="ea-fc-points" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/canva-pro.html"><img src="/img/giftcards.png" alt="Canva Pro" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Canva · Global</p>
+    <h3><a href="/product/canva-pro.html">Canva Pro</a></h3>
+    <p class="tag">Brand kits for the whole squad</p>
+    <div class="row"><span class="price">$15 <s>$16.99</s><i>−12%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 414 reviews</span>
+      <button class="btn small add" data-slug="canva-pro" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/free-fire-membership.html"><img src="/img/diamonds-crimson.png" alt="Free Fire Member Weekly / Monthly" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Garena · Global</p>
+    <h3><a href="/product/free-fire-membership.html">Free Fire Member Weekly / Monthly</a></h3>
+    <p class="tag">The membership that pays for itself in four days</p>
+    <div class="row"><span class="price">$3.99 <s>$4.99</s><i>−20%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.6 · 414 reviews</span>
+      <button class="btn small add" data-slug="free-fire-membership" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/twitch-turbo.html"><img src="/img/streaming-apps.png" alt="Twitch Turbo + Subs" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Twitch · Global</p>
+    <h3><a href="/product/twitch-turbo.html">Twitch Turbo + Subs</a></h3>
+    <p class="tag">Ad-free streams and unlimited emotes</p>
+    <div class="row"><span class="price">$4.99 <s>$5.99</s><i>−17%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.7 · 414 reviews</span>
+      <button class="btn small add" data-slug="twitch-turbo" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article><article class="card">
+  <a class="thumb" href="/product/adobe-creative-cloud.html"><img src="/img/streaming-apps.png" alt="Adobe Credit" loading="lazy" class="" onerror="this.remove()" /></a>
+  <div class="body">
+    <p class="meta">Adobe · US / EU</p>
+    <h3><a href="/product/adobe-creative-cloud.html">Adobe Credit</a></h3>
+    <p class="tag">All 20 apps, one prepaid credit</p>
+    <div class="row"><span class="price">$50.99 <s>$54.99</s><i>−7%</i></span></div>
+    <div class="row">
+      <span class="stars">★ 4.6 · 414 reviews</span>
+      <button class="btn small add" data-slug="adobe-creative-cloud" data-pack="p1">Add</button>
+    </div>
+  </div>
+</article></main><footer><div class="wrap">
+  <p><b>Palmyra</b> — game &amp; app top-ups, delivered in under a minute. Static mirror of the live catalog.</p>
+  <p class="small">Prices refresh on each export · care: <a href="mailto:care@palmyra.store">care@palmyra.store</a></p>
+</div></footer><aside class="drawer" id="cartDrawer" aria-label="Cart">
+  <div class="drawer-head"><h3>Your cart</h3><button class="x" id="cartClose">✕</button></div>
+  <div class="drawer-body" data-items></div>
+  <div class="drawer-foot"><div class="row"><span>Subtotal</span><b data-total>$0</b></div>
+  <p class="small">Checkout runs on the live app — set <code>BASE</code> when exporting, or order by email.</p>
+  <a class="btn wide ghost" href="mailto:care@palmyra.store?subject=Palmyra%20order">Order by email</a></div>
+</aside>
+<script src="/tadmur-data.js"></script>
+<script src="/app.js" defer></script>
+</body></html>
