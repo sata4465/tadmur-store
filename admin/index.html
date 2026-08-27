@@ -1,0 +1,172 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>لوحة تحكم تدمر</title>
+<style>
+  :root{color-scheme:dark}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:#0b0b12;color:#f2f2f6;margin:0;padding:16px}
+  h1{font-size:20px;margin:0 0 16px}
+  .card{background:#15151f;border:1px solid #2a2a3a;border-radius:12px;padding:16px;margin-bottom:16px}
+  input,select,button{font-size:15px;padding:10px;border-radius:8px;border:1px solid #333;background:#0e0e16;color:#fff}
+  input,select{width:100%;box-sizing:border-box;margin-bottom:8px}
+  button{cursor:pointer;background:linear-gradient(90deg,#f6c453,#e69a2e);color:#0b0b12;font-weight:700;border:none}
+  button.secondary{background:#2a2a3a;color:#fff}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px;border-bottom:1px solid #2a2a3a;text-align:right;vertical-align:middle}
+  .row{display:flex;gap:8px;align-items:center}
+  .row input{margin-bottom:0}
+  .tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;background:#333}
+  .tag.active{background:#1e5c34;color:#8ef0ac}
+  .tag.inactive{background:#5c1e1e;color:#f08e8e}
+  .small{font-size:12px;color:#999}
+  #loginBox{max-width:360px;margin:60px auto}
+  #app{display:none}
+  .msg{color:#f08e8e;font-size:13px}
+  .tabs{display:flex;gap:8px;margin-bottom:16px}
+  .tabs button{background:#2a2a3a;color:#fff}
+  .tabs button.on{background:linear-gradient(90deg,#f6c453,#e69a2e);color:#0b0b12}
+</style></head>
+<body>
+  <div id="loginBox" class="card">
+    <h1>دخول الأدمن — تدمر</h1>
+    <input id="email" type="email" placeholder="البريد الإلكتروني"/>
+    <input id="key" type="password" placeholder="مفتاح الدخول"/>
+    <button onclick="login()">دخول</button>
+    <p class="msg" id="loginMsg"></p>
+  </div>
+
+  <div id="app">
+    <div class="row" style="justify-content:space-between;margin-bottom:16px">
+      <h1>لوحة تحكم تدمر</h1>
+      <button class="secondary" onclick="logout()">خروج</button>
+    </div>
+    <div class="tabs">
+      <button id="tabP" class="on" onclick="showTab('products')">المنتجات</button>
+      <button id="tabO" onclick="showTab('orders')">الطلبات</button>
+      <button id="tabN" onclick="showTab('new')">إضافة منتج</button>
+    </div>
+
+    <div id="productsTab" class="card">
+      <table><thead><tr><th>الحالة</th><th>الاسم</th><th>السعر</th><th>قبل الخصم</th><th></th></tr></thead>
+      <tbody id="pRows"></tbody></table>
+    </div>
+
+    <div id="ordersTab" class="card" style="display:none">
+      <table><thead><tr><th>#</th><th>التاريخ</th><th>الزبون</th><th>المجموع</th><th>الحالة</th></tr></thead>
+      <tbody id="oRows"></tbody></table>
+    </div>
+
+    <div id="newTab" class="card" style="display:none">
+      <h2 style="font-size:16px">إضافة منتج جديد</h2>
+      <input id="nSlug" placeholder="الرابط (slug) مثل: my-product"/>
+      <input id="nName" placeholder="اسم المنتج"/>
+      <input id="nTagline" placeholder="وصف قصير"/>
+      <input id="nPrice" type="number" placeholder="السعر (بالسنت، مثال 499 = $4.99)"/>
+      <input id="nImage" placeholder="مسار الصورة مثل /img/giftcards.png"/>
+      <button onclick="createProduct()">إضافة</button>
+      <p class="msg" id="newMsg"></p>
+    </div>
+  </div>
+
+<script>
+async function api(path, opts) {
+  const res = await fetch(path, { credentials: "include", headers: { "Content-Type": "application/json" }, ...opts });
+  if (res.status === 401) { showLogin(); throw new Error("unauthorized"); }
+  return res.json();
+}
+function showLogin() {
+  document.getElementById("loginBox").style.display = "block";
+  document.getElementById("app").style.display = "none";
+}
+function showApp() {
+  document.getElementById("loginBox").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  loadProducts(); loadOrders();
+}
+async function login() {
+  const email = document.getElementById("email").value.trim();
+  const key = document.getElementById("key").value;
+  const res = await fetch("/api/admin/login", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, key }) });
+  if (res.ok) { showApp(); } else { document.getElementById("loginMsg").textContent = "بيانات دخول غير صحيحة"; }
+}
+async function logout() { await fetch("/api/admin/logout", { method: "POST", credentials: "include" }); showLogin(); }
+
+function showTab(t) {
+  document.getElementById("productsTab").style.display = t === "products" ? "block" : "none";
+  document.getElementById("ordersTab").style.display = t === "orders" ? "block" : "none";
+  document.getElementById("newTab").style.display = t === "new" ? "block" : "none";
+  document.getElementById("tabP").className = t === "products" ? "on" : "";
+  document.getElementById("tabO").className = t === "orders" ? "on" : "";
+  document.getElementById("tabN").className = t === "new" ? "on" : "";
+}
+
+async function loadProducts() {
+  const list = await api("/api/admin/products");
+  const rows = document.getElementById("pRows");
+  rows.innerHTML = list.map(p => `
+    <tr>
+      <td><span class="tag ${p.active ? 'active' : 'inactive'}" style="cursor:pointer" onclick="toggleActive('${p.slug}', ${!p.active})">${p.active ? 'متاح' : 'موقوف'}</span></td>
+      <td>${p.name}<div class="small">${p.slug}</div></td>
+      <td><input style="width:80px;margin:0" type="number" value="${p.price}" onchange="updatePrice('${p.slug}', this.value, 'price')"/></td>
+      <td><input style="width:80px;margin:0" type="number" value="${p.compare || ''}" onchange="updatePrice('${p.slug}', this.value, 'compare')"/></td>
+      <td><button class="secondary" onclick="deleteProduct('${p.slug}')">حذف</button></td>
+    </tr>`).join("");
+}
+async function toggleActive(slug, next) {
+  await api(`/api/admin/products/${slug}`, { method: "PUT", body: JSON.stringify({ active: next }) });
+  loadProducts();
+}
+async function updatePrice(slug, value, field) {
+  const body = {};
+  if (field === "price") {
+    // price sent via packs[0]; simplest: update first pack price too
+    body.packs = null; body.price = Number(value);
+  } else {
+    body.compare = value ? Number(value) : null;
+  }
+  await api(`/api/admin/products/${slug}`, { method: "PUT", body: JSON.stringify(body) });
+}
+async function deleteProduct(slug) {
+  if (!confirm("حذف هالمنتج نهائيًا؟")) return;
+  await api(`/api/admin/products/${slug}`, { method: "DELETE" });
+  loadProducts();
+}
+async function createProduct() {
+  const body = {
+    slug: document.getElementById("nSlug").value.trim(),
+    name: document.getElementById("nName").value.trim(),
+    tagline: document.getElementById("nTagline").value.trim(),
+    price: Number(document.getElementById("nPrice").value || 0),
+    image: document.getElementById("nImage").value.trim() || "/img/giftcards.png",
+  };
+  const res = await api("/api/admin/products", { method: "POST", body: JSON.stringify(body) });
+  document.getElementById("newMsg").textContent = res.ok ? "تمت الإضافة ✅" : (res.error || "خطأ");
+  if (res.ok) loadProducts();
+}
+async function loadOrders() {
+  const list = await api("/api/admin/orders");
+  const rows = document.getElementById("oRows");
+  rows.innerHTML = list.map(o => `
+    <tr>
+      <td>${o.id}</td>
+      <td>${new Date(o.createdAt).toLocaleString('ar')}</td>
+      <td>${(o.contact && (o.contact.name || o.contact.email || o.contact.phone)) || '-'}</td>
+      <td>$${(o.total/100).toFixed(2)}</td>
+      <td>
+        <select onchange="updateStatus('${o.id}', this.value)">
+          ${['pending','paid','delivered','cancelled'].map(s => `<option value="${s}" ${o.status===s?'selected':''}>${s}</option>`).join('')}
+        </select>
+      </td>
+    </tr>`).join("") || "<tr><td colspan='5' class='small'>لا يوجد طلبات بعد</td></tr>";
+}
+async function updateStatus(id, status) {
+  await api("/api/admin/orders", { method: "PATCH", body: JSON.stringify({ id, status }) });
+}
+
+(async () => {
+  try {
+    const s = await (await fetch("/api/admin/session", { credentials: "include" })).json();
+    if (s.ok) showApp(); else showLogin();
+  } catch (e) { showLogin(); }
+})();
+</script>
+</body></html>
